@@ -26,116 +26,86 @@ public class ProposalController {
 	@Autowired
 	private ProposalService proposalService;
 	
-	//Get All
 	 @GetMapping(
 	   	        value = "/getProposals",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
-	  public List<Proposal> getAllProposal(){
-		 
-		return this.proposalService.getAllProposal();
+	 public List<Proposal> getAllProposal(){
+		 return this.proposalService.getAllProposal();
 		
 	}	
 	
-	//Get using by id
 	 @GetMapping(
 	   	        value = "/getProposalById/{id}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
 	 public ResponseEntity<Proposal> getProposalById(@PathVariable(value = "id") Long proposalId)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalById(proposalId);
+		 return proposalService.getProposalById(proposalId);
 	}
 	
-		//Get using by name
+	
 	 @GetMapping(
 	   	        value = "/getProposalByName/{name}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
-	 public ResponseEntity<List<Proposal>> getProposalByName(@PathVariable(value = "name") String proposalName)
+	public ResponseEntity<List<Proposal>> getProposalByName(@PathVariable(value = "name") String proposalName)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalByName(proposalName);
+		 return proposalService.getProposalByName(proposalName);
 	}
 	
-		//Get using by summary
+	
 	 @GetMapping(
 	   	        value = "/getProposalBySummary/{summary}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
 	 public ResponseEntity<List<Proposal>> getProposalBySummary(@PathVariable(value = "summary") String proposalSummary)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalBySummary(proposalSummary);
+		 return proposalService.getProposalBySummary(proposalSummary);
 	}	 
 	 	 
 	 
-		//Get using by description
 	 @GetMapping(
 	   	        value = "/getProposalByDescription/{description}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
-	 public ResponseEntity<List<Proposal>> getProposalByDescription(@PathVariable(value = "description") String proposalDescription)
+	public ResponseEntity<List<Proposal>> getProposalByDescription(@PathVariable(value = "description") String proposalDescription)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalByDescription(proposalDescription);
+		 return proposalService.getProposalByDescription(proposalDescription);
 	}	 
 	
-		//Get using by Owner
 	 @GetMapping(
 	   	        value = "/getProposalByOwner/{owner}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
-	 public ResponseEntity<List<Proposal>> getProposalByOwner(@PathVariable(value = "owner") String proposalOwner)
+	public ResponseEntity<List<Proposal>> getProposalByOwner(@PathVariable(value = "owner") String proposalOwner)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalByOwner(proposalOwner);
+		 return proposalService.getProposalByOwner(proposalOwner);
 	}
 	 
-		//Get using by Priority
+
 	 @GetMapping(
 	   	        value = "/getProposalByPriority/{priority}",
 	   	        produces = MediaType.APPLICATION_JSON_VALUE)
-	
-	 public ResponseEntity<List<Proposal>> getProposalByPriority(@PathVariable(value = "priority") String proposalPriority)
+	public ResponseEntity<List<Proposal>> getProposalByPriority(@PathVariable(value = "priority") String proposalPriority)
 			throws ResourceNotFoundException {
-		 
-		return proposalService.getProposalByPriority(proposalPriority);
+		 return proposalService.getProposalByPriority(proposalPriority);
 	}
 	 
-  //Insert
 	 @PostMapping(
  	        value = "/insertProposal",
  	        consumes = MediaType.APPLICATION_JSON_VALUE)
-	
-	 public Proposal insertProposal(@Validated @RequestBody Proposal proposal) {
-		 
-		return proposalService.insertProposal(proposal);
+    public Proposal insertProposal(@Validated @RequestBody Proposal proposal) {
+		 return proposalService.insertProposal(proposal);
 	}
 	
-//Update
 	 @PutMapping(
 	 	        value = "/updateProposal/{id}",
 	 	        consumes = MediaType.APPLICATION_JSON_VALUE)
-		
-	
 	 public ResponseEntity<Proposal> updateProposal(@PathVariable(value = "id") Long proposalId,
 			@Validated @RequestBody Proposal proposalDetails) throws ResourceNotFoundException {
-		
 		return proposalService.updateProposal(proposalId, proposalDetails);
 		
 	}
 	
-//Delete	
-	
-	@DeleteMapping("/deleteProposal/{id}")
-	public Map<String, Boolean> deleteProposal(@PathVariable(value = "id") Long proposalId)
+	@DeleteMapping("/deleteProposalById/{id}")
+	  public Map<String, Boolean> deleteProposalById(@PathVariable(value = "id") Long proposalId)
 			throws ResourceNotFoundException {
-		
-		return proposalService.deleteProposal(proposalId);
-
-
-	}
+		return proposalService.deleteProposalById(proposalId);
+ }
 	
 }

@@ -12,6 +12,7 @@ public interface ProposalRepository extends JpaRepository<Proposal, Long>{
 	public List<Proposal> findByDescription(String description);
 	public List<Proposal> findByOwner(String owner);
 	public List<Proposal> findByPriority(String priority);
+
 	
 	
   
