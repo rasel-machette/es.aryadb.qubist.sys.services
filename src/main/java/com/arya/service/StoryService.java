@@ -43,7 +43,8 @@ public class StoryService {
 				throws ResourceNotFoundException {
 		
 		LOGGER.info("Start process");
-			List<Story> story = storyRepository.findByName(storyName);			
+			List<Story> story = storyRepository.findByName(storyName);
+					
 				return ResponseEntity.ok().body(story);
 					
 		}

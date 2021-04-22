@@ -31,8 +31,8 @@ import static com.google.common.base.Predicates.or;
 @EnableSwagger2
 public class SwaggerConfiguration {
 	private ApiInfo apiInfo() {
-		        return new ApiInfo("Mailchimp Campaign API", "These API permite to get list campaigns and get individual campaign from mailchimp. You can add campaign and campaign folder in mailchimp and also can delete,send and update.", "API v1.0.1", "Terms of service",
-		          new Contact("rasel-machette","http://localhost:8080/swagger-ui", "md.rasel@machette.tech"),
+		        return new ApiInfo("Arya DB API", "These API permite to insert Story and Proposal attributes in DB, you can also get all attributes using get medthod. You can also update, delete attributes ", "API v1.0.1", "Terms of service",
+		          new Contact("rasel-machette","http://localhost:8084/swagger-ui", "md.rasel@machette.tech"),
 		          "License of API", "API license URL", Collections.emptyList());
 		    }
     
