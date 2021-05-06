@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.arya</groupId>
-	<artifactId>es.aryadb.qubist.sys.service</artifactId>
+	<artifactId>jenkins-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>es.aryadb.qubist.sys.service</name>
 	<description>aryadb project</description>
